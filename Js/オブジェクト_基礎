@@ -1,1 +1,29 @@
+# オブジェクトのコピー
+スプレッド構文を使うことで、オブジェクトのコピーが作れる
+```
+const orderObject = { product: 'PC', orderId: 123 }
+const orderObjectCopy = { ...orderObject }
 
+console.log(orderObjectCopy) // { product: 'PC', orderId: 123  }
+
+// 元のオブジェクトの値を変更しても、コピーしたオブジェクトは影響を受けない
+orderObject.orderId = 456
+console.log(orderObjectCopy) // { product: 'PC', orderId: 123  }
+```
+
+#　既存のオブジェクトから新規のプロパティを追加
+```
+const orderObject = { product: 'PC', orderId: 123 }
+const orderObjectCopy = { ...orderObject, price: 10000 }
+console.log(orderObjectCopy) // { product: 'PC', orderId: 123, price: 10000  }
+```
+
+# 複数オブジェクトを一つにまとめる
+スプレッド構文を利用し一つにまとめることができる
+```
+const orderObject = { product: 'PC', orderId: 123 }
+const secondOrderObject = { customer: '鈴木', price: 30000 }
+const mergedOrderObject = { ...orderObject, ...secondOrderObject }
+
+console.log(mergedOrderObject) // { product: 'PC', orderId: 123, customer: '鈴木', price: 30000  }
+```
