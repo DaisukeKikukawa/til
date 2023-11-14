@@ -15,3 +15,32 @@ reader.on('close', () => {
   }
 });
 ```
+## C097:プレゼント応募企画の実施
+
+```
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+// 自分の得意な言語で
+// Let's チャレンジ！！
+var lines = [];
+var reader = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+reader.on('line', (line) => {
+  lines.push(line);
+});
+reader.on('close', () => {
+  for (let i = 1;i <= lines[0];i++) {
+      if (i % lines[0] == 0 && i % lines[1] == 0) {
+          console.log('AB');
+      } else if (i % lines[1] == 0) {
+          console.log('A');
+      } else if (i % lines[2]) {
+          console.log('B');
+      } else {
+          console.log('N');
+      }
+  }
+});
+```
