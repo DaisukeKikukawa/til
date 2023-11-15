@@ -53,7 +53,6 @@ reader.on('close', () => {
   let array_1 = lines[0].substr(0,spaceIndex)
   　let count = 0;
   for (var i = 1; i < Number(array_1); i++) {
-    //   console.log(lines[i])
     if (Number(lines[i]) <= array_2) {
         count += Number(lines[i])
     }
