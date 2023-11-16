@@ -60,3 +60,32 @@ reader.on('close', () => {
   console.log(count);
 });
 ```
+
+## C016:Leet文字列
+```
+reader.on('close', () => {
+  let resultString = "";
+  for (var i = 0; i < lines[0].length; i++) {
+      if(lines[0][i] == "A") {
+          resultString += "4"
+      } else if(lines[0][i] == "E") {
+          resultString += "3"
+      } else if(lines[0][i] == "G") {
+          resultString += "6"
+      } else if(lines[0][i] == "I") {
+          resultString += "1"
+      } else if(lines[0][i] == "O") {
+          resultString += "0"
+      } else if (lines[0][i] == "S") {
+          resultString += "5"
+      } else if(lines[0][i] == "Z") {
+          resultString += "2"
+      } else {
+          resultString += lines[0][i]
+      }
+  }
+  console.log(resultString)
+});
+```
+
+
