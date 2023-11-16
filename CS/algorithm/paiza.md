@@ -88,4 +88,22 @@ reader.on('close', () => {
 });
 ```
 
+## D109:ゾロ目の日付
+```
+reader.on('close', () => {
+ let array = lines[0].split(" ");
+ let array_join = array.join("");
+ 
+ let answer = 'Yes';
+ 
+ for (let i = 0; i<array_join.length; i++) {
+    //  console.log(array_join[i])
+    if (array_join[i] != lines[0][0]) {
+      answer = "No";  
+      break;
+    } 
+ }
+ console.log(answer);
+});
+```
 
