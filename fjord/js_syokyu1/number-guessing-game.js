@@ -1,8 +1,5 @@
 let randomNumber = Math.floor(Math.random() * 100) + 1;
-console.log("hoge")
 const guesses = document.querySelector(".guesses");
-
-console.log(guesses.textContent);
 
 const lastResult = document.querySelector(".lastResult");
 const lowOrHi = document.querySelector(".lowOrHi");
