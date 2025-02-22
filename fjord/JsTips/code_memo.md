@@ -54,3 +54,7 @@ const を使用して値に名前をつけると、コードを見ている人�
 mapとfileterの違い
 filterは渡す関数が論理値を返す点が異なる
 
+
+## FizzBuzzメモ
+import { inspect } from 'util';
+inspect.colors = false;
