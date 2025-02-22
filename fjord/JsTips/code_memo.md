@@ -58,3 +58,11 @@ filterは渡す関数が論理値を返す点が異なる
 ## FizzBuzzメモ
 import { inspect } from 'util';
 inspect.colors = false;
+
+// console.log(typeof "文字列")
+    console.log(1)
+    console.log(true)
+    console.log(new Date())
+    console.log(Symbol("id"));
+    console.log(null);
+    console.log("Hello, World!");
