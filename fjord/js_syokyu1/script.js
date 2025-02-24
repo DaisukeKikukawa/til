@@ -12,3 +12,4 @@ const button = document.querySelector("button");
 button.addEventListener("click", createParagraph);
 // }
 // buttons.forEach(button => button.addEventListener("click", createParagraph));
+const [a, b] = [123, 1234];

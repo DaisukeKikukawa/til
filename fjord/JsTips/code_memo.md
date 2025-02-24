@@ -165,7 +165,7 @@ btn.onclick = changeBackground;
   <script>
 
     const buttonBar = document.querySelector('.button-bar');
-    
+
     buttonBar.addEventListener("click", (e) => {
       const color = e.target.dataset.color;
       buttonBar.style.backgroundColor = color;
@@ -219,4 +219,10 @@ btn.addEventListener("click", (e) => {
     btn.className = "dark";
   }
 })
+```
+
+### コード整形
+```
+npm run fix
+npm run lint
 ```
