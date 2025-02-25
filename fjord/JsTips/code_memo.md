@@ -226,3 +226,16 @@ btn.addEventListener("click", (e) => {
 npm run fix
 npm run lint
 ```
+
+### カレンダープログラム
+日付関連のメモ
+``` javascript
+const argv = minimist(process.argv.slice(2));
+const days = ["日","月","火","水","木","金","土"];
+const now = new Date();
+const year = argv.y ? argv.y : now.getFullYear();
+const month =argv.m ? argv.m : now.getMonth() + 1;
+const MonthFirstDateDayOfWeek = new Date(year, month - 1, 1).getDay();
+const MonthFirstDate = new Date(year, month - 1, 1).getDate();
+const MonthLastDate = new Date(year, month, 0).getDate();
+```
