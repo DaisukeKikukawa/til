@@ -332,11 +332,11 @@ frankie.introduceSelf();
 // "こんにちは、フランキーです。"
 ```
 
-コンストラクターとは、new キーワードを使って呼び出される関数
+コンストラクターとは、newキーワードを使って呼び出される関数
 コンストラクターは、慣習上、大文字で始められる
 - コンストラクターを呼び出すと、次のようなことが行われます
   - 新しいオブジェクトを作成する
-  - 新しいオブジェクトに this を結び付け、コンストラクターのコードで this を参照することができるようにする
+  - 新しいオブジェクトにthisを結び付け、コンストラクターのコードでthisを参照することができるようにする
   - コンストラクターでコードを実行する
   - その新しいオブジェクトを返す
 
@@ -391,4 +391,86 @@ User.prototype = {
         return this.age;
     }
 }
+```
+
+### クラスとインスタンス
+一般に、コンストラクターはクラス定義の一部として書き出され、通常はクラスそのものと同じ名前を持っています。
+
+### ポリモーフィズム
+メソッドが同じ名前で、異なるクラスで異なる実装を持つことをポリモーフィズムと呼ぶ
+
+### 継承
+```javascript
+class Person {
+  name;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  introduceSelf() {
+    console.log(`Hi! I'm ${this.name}`);
+  }
+}
+```
+
+```javascript
+class Professor extends Person {
+  teaches;
+
+  constructor(name, teaches) {
+    super(name);
+    this.teaches = teaches;
+  }
+
+  introduceSelf() {
+    console.log(
+      `My name is ${this.name}, and I will be your ${this.teaches} professor.`,
+    );
+  }
+
+  grade(paper) {
+    const grade = Math.floor(Math.random() * (5 - 1) + 1);
+    console.log(grade);
+  }
+}
+
+```
+サブクラス (Professor) のコンストラクターでは、親クラス (Person) のコンストラクターをsuper()で必ず呼び出さなければならない。
+
+
+```javascript
+class Shape {
+  name;
+  sides;
+  sideLength;
+
+  constructor(name, sides, sideLength) {
+    this.name = name;
+    this.sides = sides;
+    this.sideLength = sideLength;
+  }
+
+  calcPerimeter() {
+    console.log(this.sides * this.sideLength);
+  }
+}
+
+class Square extends Shape {
+  constructor(sideLength) {
+    super("square", 4, sideLength); // name は "square", sides は 4 に固定
+  }
+
+  calcArea() {
+    console.log(this.sideLength ** 2); // 正方形の面積 = 辺の長さの2乗
+  }
+}
+
+// Square インスタンスを作成
+const square = new Square(5);
+
+// メソッドを呼び出して動作確認
+square.calcPerimeter(); // 20
+square.calcArea(); // 25
+
 ```
