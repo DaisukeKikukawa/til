@@ -239,3 +239,156 @@ const MonthFirstDateDayOfWeek = new Date(year, month - 1, 1).getDay();
 const MonthFirstDate = new Date(year, month - 1, 1).getDate();
 const MonthLastDate = new Date(year, month, 0).getDate();
 ```
+
+### 三項演算子
+boolean ? true : false;
+
+### オブジェクトの基本
+```javascript
+const person = {
+  name: ["ボブ","スミス"],
+  age: 32,
+  bio: function name(params) {
+    console.log(`${this.name[0]}・${this.name[1]}は ${this.age} 歳です。`);
+  },
+  // 以下でも可
+  // bio() {
+  //   console.log(`${this.name[0]}・${this.name[1]}は ${this.age} 歳です。`);
+  // }
+  introduceSelf: function name(params) {
+    console.log(`${this.name[0]}・${this.name[1]}は ${this.age} 歳です。`);
+  },
+  // 以下でも可
+  // introduceSelf() {
+  //   console.log(`${this.name[0]}・${this.name[1]}は ${this.age} 歳です。`);
+  // }
+};
+```
+
+### ブラケット記法でのプロパティへのアクセス
+```javascript
+const person = {
+  name: ["ボブ", "スミス"],
+  age: 32,
+};
+
+function logProperty(propertyName) {
+  console.log(person[propertyName]);
+}
+
+logProperty("name");
+// ["ボブ", "スミス"]
+logProperty("age");
+// 32
+```
+
+### 新しいメンバーの追加
+```javascript
+person["eyes"] = "hazel";
+person.farewell = function () {
+  console.log("Bye everybody!");
+};
+```
+
+### ドット記法とブラケット記法の違い
+オブジェクトにプロパティを追加する部分がことなる
+ドット記法は、名前を指す変数ではなく、書いたとおりのメンバー名のみ受け入れることができる
+
+
+```javascript
+const myDataName = "height";
+const myDataValue = "1.75m";
+person[myDataName] = myDataValue;
+```
+
+### "this"について
+通常はそこまで意識する必要がないが、コンストラクターを利用する際に重要な考えになる
+
+オブジェクト
+```javascript
+function createPerson(name) {
+  const obj = {};
+  obj.name = name;
+  obj.introduceSelf = function () {
+    console.log(`こんにちは、${this.name}です。`);
+  };
+  return obj;
+}
+const frankie = createPerson("フランキー");
+frankie.introduceSelf();
+// "こんにちは、フランキーです。"
+```
+↓
+コンストラクター
+```javascript
+function Person(name) {
+  this.name = name;
+  this.introduceSelf = function () {
+    console.log(`こんにちは、${this.name}です。`);
+  };
+}
+const frankie = new Person("フランキー");
+frankie.introduceSelf();
+// "こんにちは、フランキーです。"
+```
+
+コンストラクターとは、new キーワードを使って呼び出される関数
+コンストラクターは、慣習上、大文字で始められる
+- コンストラクターを呼び出すと、次のようなことが行われます
+  - 新しいオブジェクトを作成する
+  - 新しいオブジェクトに this を結び付け、コンストラクターのコードで this を参照することができるようにする
+  - コンストラクターでコードを実行する
+  - その新しいオブジェクトを返す
+
+
+### オブジェクトのプロトタイプ
+プロトタイプを使った例
+```javascript
+function Cat(name, breed, color) {
+    this.name = name;
+    this.breed = breed;
+    this.color = color;
+}
+
+// greeting メソッドを prototype に追加
+Cat.prototype.greeting = function () {
+    console.log(`Hello, said ${this.name} the ${this.breed}.`);
+};
+
+// インスタンスを作成
+const cat1 = new Cat('Bertie', 'Cymric', 'white');
+const cat2 = new Cat('Elfie', 'Aphrodite Giant', 'ginger');
+
+// メソッド呼び出し
+cat1.greeting();
+cat2.greeting();
+```
+
+### プロトタイプのまとめ方
+```javascript
+var User = function(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+
+User.prototype.getName = function() {
+    return this.name;
+}
+
+User.prototype.getAge = function() {
+    return this.age;
+}
+```
+
+```javascript
+User.prototype = {
+    getName: function() {
+        return this.name;
+    },
+
+    getAge: function() {
+        return this.age;
+    }
+}
+```
