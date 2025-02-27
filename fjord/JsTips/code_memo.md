@@ -15,7 +15,7 @@ for (const button of buttons) {
 ```
 
 ### varの巻き上げ
-変数を初期化した後で変数を var で宣言することができてしまう
+変数を初期化したあとで変数をvarで宣言することができてしまう
 現在はletが導入されており、ほとんどvarが使われることはない
 ちなみにletでは以下のコードはエラーになる
 以下が具体例
@@ -473,4 +473,68 @@ const square = new Square(5);
 square.calcPerimeter(); // 20
 square.calcArea(); // 25
 
+```
+
+### for...in
+オブジェクト（連想配列）に対して利用するもの
+```javascript
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// Expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+```
+
+### for...of
+配列に対して利用するもの
+```javascript
+const array1 = ["a", "b", "c"];
+
+for (const element of array1) {
+  console.log(element);
+}
+
+// Expected output: "a"
+// Expected output: "b"
+// Expected output: "c"
+```
+
+### Object.entries()
+使い方1: オブジェクトを for...of でループする
+
+```javascript
+const obj = { a: "apple", b: "banana", c: "cherry" };
+
+for (const [key, value] of Object.entries(obj)) {
+  console.log(`${key}: ${value}`);
+}
+
+a: apple
+b: banana
+c: cherry
+```
+
+使い方2: Object.entries() を使ってオブジェクトを配列に変換
+```javascript
+const obj = { x: 1, y: 2, z: 3 };
+const entries = Object.entries(obj);
+console.log(entries);
+
+[ ['x', 1], ['y', 2], ['z', 3] ]
+```
+
+使い方3:例 3: Object.entries() と map() でオブジェクトの値を変換
+
+```javascript
+const prices = { apple: 100, banana: 200, cherry: 300 };
+
+const discountPrices = Object.entries(prices).map(([key, value]) => [key, value * 0.9]);
+console.log(Object.fromEntries(discountPrices));
+
+{ apple: 90, banana: 180, cherry: 270 }
 ```
