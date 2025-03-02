@@ -553,3 +553,14 @@ console.log(Object.fromEntries(discountPrices));
 `  const copyArr = [...theArr]; // スプレッド構文でコピー`
 方法③: map() でコピー
 `const copyArr = theArr.map(value => value); // 配列のコピーを作成`
+
+### Jsのfalseについて
+以下のようなコードの場合、JavaScriptではfalseとみなされる値が多く、ユーザーの入力に対して条件演算子 (?) を使うのだと意図しない挙動を引き起こす可能性が高い。
+入力がない場合を考慮した処理を書きたい場合は、条件を具体的に明示するか、もしくは別の演算子を使用すること。
+https://developer.mozilla.org/ja/docs/Glossary/Falsy
+
+```javascript
+const argv = minimist(process.argv.slice(2));
+const now = new Date();
+const year = argv.y ? argv.y : now.getFullYear();
+```
