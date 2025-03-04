@@ -565,3 +565,27 @@ const now = new Date();
 const year = argv.y ? argv.y : now.getFullYear();
 ```
 
+### オブジェクトオブジェクトのまま扱う
+
+以下はプリミティブな型を使ったコード
+
+``` ruby
+first_day = Date.new(y, m, 1).day
+last_day = Date.new(y, m, -1).day
+
+(first_day..last_day).each do |day|
+  wday = Date.new(y, m, day).wday
+  if wday == 6
+    # ...
+```
+
+以下はオブジェクトのままのコード
+
+```ruby
+first_date = Date.new(y, m, 1)
+last_date = Date.new(y, m, -1)
+
+(first_date..last_date).each do |date|
+  if date.saturday?
+    # ...
+```
