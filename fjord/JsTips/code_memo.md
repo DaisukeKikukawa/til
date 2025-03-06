@@ -714,3 +714,8 @@ for (let i = startDate; i <= lastDate; i.setDate(i.getDate() + 1)) {
 }
 
 ```
+
+### null合体演算子
+https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment
+
+`const year = argv.y ??= now.getFullYear();`
