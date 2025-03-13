@@ -10,3 +10,12 @@ https://www.youtube.com/watch?v=cUtkLKLByXw
 
 ドメインからIPアドレスを取得することを正引き
 IPアドレスからドメインを取得することを逆引き
+
+# GetメソッドとPostメソッドの違い
+- getはURLに送信内容（パラメーター）がのる
+  - 検索などの場合はブックマークを考え、getを使った方が良い
+
+- postは送信内容（パラメーター）がURLにのらない
+  - ログインなどの場合はpostを使った方が良い
+
+フォームの構造化には<fieldset>、<legend>、<label>タグを使用する
