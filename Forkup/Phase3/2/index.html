@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 1 -->
+  <!-- <button>カウンター</button>
+  <p>0</p> -->
+
+  <!-- 2 -->
+  <!-- <p class="paragraph1">paragraph1</p>
+  <p class="paragraph2">paragraph2</p>
+  <p class="paragraph3">paragraph3</p> -->
+
+  <!-- 3 -->
+  <ul id="myList">
+    <li>項目1</li>
+    <li>項目2</li>
+    <li>項目3</li>
+  </ul>
+
+  <p></p>
+
+
+</body>
+<script>
+  // 1
+  // let button = document.querySelector("button");
+  // let counter = 1;
+  // button.addEventListener("click", function() {
+  //   document.querySelector("p").innerText = counter;
+  //   counter++;
+  // });
+
+  // 2
+  // すべての <p> 要素を取得
+    // let paragraphs = document.querySelectorAll("p");
+
+    // // 各段落にクリックイベントを設定
+    // paragraphs.forEach(p => {
+    //     p.addEventListener("click", function (event) {
+    //       let currentColor = event.target.style.backgroundColor;
+    //       if (currentColor === "white" || currentColor === "") {
+    //         console.log(currentColor);
+    //         event.target.style.backgroundColor = "red";
+    //       } else {
+    //         event.target.style.backgroundColor = "white";
+    //       }
+    //     });
+    //   });
+
+    // 3
+    document.addEventListener("DOMContentLoaded", function () {
+      let p = document.querySelector("p");
+
+      myList.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+          p.textContent = `選択された項目: ${event.target.textContent}`;
+        }
+      });
+    });
+
+
+
+</script>
+
+</html>

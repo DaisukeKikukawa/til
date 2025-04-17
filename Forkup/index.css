@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  border: 1px solid black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  height: 500px;
+  margin-top: 30px;
+  display: flex;
+}
+
+.side_menu {
+  flex: 3;
+  border: 1px solid black;
+}
+
+.side_menu p {
+  margin: 10px;
+}
+
+.side_menu .item {
+  border: 1px solid black;
+  height: 30px;
+  margin: 10px;
+}
+
+.main_contents {
+  flex: 7;
+  border: 1px solid black;
+  margin-left: 30px;
+}
+
+.footer {
+  width: 100%;
+  border: 1px solid black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}

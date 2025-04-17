@@ -1,0 +1,41 @@
+/* ベーススタイル */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header, .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.main-content, .sidebar {
+    background-color: #e1e1e1;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: center;
+}
+
+/* デスクトップ向けレイアウト */
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row; /* 横並びに変更 */
+        justify-content: space-between;
+    }
+
+    .main-content {
+        flex: 7;
+    }
+
+    .sidebar {
+        flex: 3;
+    }
+}

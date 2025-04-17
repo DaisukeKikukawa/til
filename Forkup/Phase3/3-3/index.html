@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>要素の表示/非表示切り替えデモ</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .accordion {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+    }
+    .accordion-header {
+      background: #f1f1f1;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .accordion-content {
+      display: none;
+      padding: 10px;
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1>要素の表示/非表示切り替え</h1> -->
+  <!-- <button id="toggleButton">切り替え</button>
+  <div id="targetElement">
+    <p>これは表示/非表示を切り替える要素です。</p>
+  </div> -->
+
+  <h1>もっと見る機能デモ</h1>
+  <div id="textContent">
+    <p>これは表示/非表示を切り替える要素の最初の部分です。</p>
+    <div id="moreText" class="hidden">
+      <p>ここから先の内容が「続きを読む」ボタンを押すと表示されます。</p>
+      <p>さらに多くの情報を表示するための追加の段落がここにあります。</p>
+    </div>
+  </div>
+  <button id="toggleButton">続きを読む</button>
+
+  <h1>アコーディオンメニュー</h1>
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">項目1</div>
+      <div class="accordion-content">項目1の詳細内容がここに表示されます。</div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">項目2</div>
+      <div class="accordion-content">項目2の詳細内容がここに表示されます。</div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header">項目3</div>
+      <div class="accordion-content">項目3の詳細内容がここに表示されます。</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
